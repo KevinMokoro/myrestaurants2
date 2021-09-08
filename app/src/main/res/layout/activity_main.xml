@@ -20,13 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="26dp"
         android:background="@color/black"
+        android:fontFamily="@font/bangers"
         android:text="MyRestaurants2"
         android:textColor="@color/dark_primary_color"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/locationEditText"
