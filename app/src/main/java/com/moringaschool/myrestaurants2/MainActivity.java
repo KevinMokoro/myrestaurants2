@@ -12,7 +12,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
    // private Button mFindRestaurantsButton;
     @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
    // private EditText mLocationEditText;
@@ -22,22 +22,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // mLocationEditText = (EditText)findViewById(R.id.locationEditText);
-       // mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
+        // mLocationEditText = (EditText)findViewById(R.id.locationEditText);
+        // mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
         ButterKnife.bind(this);
-        mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
+        mFindRestaurantsButton.setOnClickListener(this);
+    }
+
             @Override
             public void onClick(View v) {
-               // Toast.makeText(MainActivity.this, "Hello World", Toast.LENGTH_LONG).show();
-                String location = mLocationEditText.getText().toString();
-               // Toast.makeText(MainActivity.this, location, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
-                intent.putExtra("location", location);
-                startActivity(intent);
+                // Toast.makeText(MainActivity.this, "Hello World", Toast.LENGTH_LONG).show();
+                if (v == mFindRestaurantsButton) {
+                    String location = mLocationEditText.getText().toString();
+                    // Toast.makeText(MainActivity.this, location, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+                    intent.putExtra("location", location);
+                    startActivity(intent);
 
-
+                }
             }
-        });
 
-    }
+
+
 }
