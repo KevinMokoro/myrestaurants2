@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RestaurantActivity extends AppCompatActivity {
+public class RestaurantListActivity extends AppCompatActivity {
     //private TextView mLocationTextView;
     //private ListView mListView;
     //@BindView(R.id.locationTextView) TextView mLocationTextView;
@@ -95,9 +95,9 @@ public class RestaurantActivity extends AppCompatActivity {
                 hideProgressbar();
                 if (response.isSuccessful()){
                     restaurants = response.body().getBusinesses();
-                    mAdapter = new RestaurantListAdapter(RestaurantActivity.this, restaurants);
+                    mAdapter = new RestaurantListAdapter(RestaurantListActivity.this, restaurants);
                     mRecyclerView.setAdapter(mAdapter);
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RestaurantActivity.this);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RestaurantListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
